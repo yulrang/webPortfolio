@@ -1,0 +1,485 @@
+
+/* visual */
+.visual {
+	position:relative;
+	overflow:hidden;
+	.visual_wrap {
+		position:absolute;
+		height:100%;
+	}
+	.visual_footer {
+		position:absolute;
+		bottom:0;
+		width:100%;
+		.box { @extend %clear;}
+
+		.visual_info {
+			width:100%;
+			height:110px;
+		}
+	}
+}
+@for $i from 1 through 9 {
+	.visual_#{$i} {
+		background:url(../../images/main/visual#{$i}.jpg) no-repeat center;
+		background-size:cover;
+	}
+}
+.visual_list {
+	box-sizing:border-box;
+	width:100%;
+	height:100%;
+	padding-top:140px;
+	&.dark {
+		color:#fff;
+		.btn_more {
+			border-color:#fff;
+			color:#fff;
+		}
+	}
+	> .box {
+		height:100%;
+	}
+	.visual_title {
+		white-space:nowrap;
+	}
+	.visual_txt {
+		padding:10px 0 20px;
+	}
+
+}
+
+.list_rmcn {
+	float:left;
+	height:40px;
+	line-height:40px;
+	margin-bottom:20px;
+
+	.list_left,
+	.list_right {
+		width:40px;
+		display:inline-block;
+		vertical-align:top;
+		&:before {
+			font-size:40px;
+			color:#fff;
+		}
+	}
+	.list_left:before {
+		content:'\f104';
+	}
+	.list_right:before {
+		content:'\f105';
+	}
+	.list_page {
+		font-size:15px;
+		color:#fff;
+		line-height:1;
+		letter-spacing:5px;
+	}
+}
+.list_play {
+	float:left;
+	width:40px;
+	height:40px;
+
+	&.on:before {
+		content: '\f04c';
+	}
+	&:before {
+		content:'\f04b';
+		color:#fff;
+		text-align:center;
+	}
+}
+
+
+
+/* visual_footer */
+.visual_logo,
+.news,
+.ico_news {
+	display:inline-block;
+	vertical-align:middle;
+}
+.visual_logo {
+	position:relative;
+	padding-right:50px;
+	&:after {
+		content:'';
+		position:absolute;
+		right:0;
+		top:20px;
+		bottom:20px;
+		width:1px;
+		background:#fff;
+		background:rgba(255,255,255,.3);
+	}
+}
+.visual_news {
+	@extend %valign;
+	display:inline-block;
+
+	.news {
+		padding-left:50px;
+		&:first-of-type {
+			padding-left:0;
+		}
+		> li {
+			max-width:280px;
+			@include elip(1);
+			color:#fff;
+			> a {
+				line-height:20px;
+				color:inherit;
+				&:hover {
+					text-decoration:underline;
+					&:before {
+						text-decoration:none;
+					}
+				}
+				&:before {
+					content:'-';
+					display:inline-block;
+					padding-right:5px;
+				}
+			}
+		}
+	}
+}
+
+/******/
+.visual_2 .box {
+	width:(320 * 4) + px;
+	position:relative;
+}
+.pl_title {
+	position:absolute;
+	width:100%;
+	height:122px;
+	background:url(../../images/main/story_tit.png) center no-repeat;
+}
+.person_list {
+
+	> li > a {
+		display:block;
+		width:322px;
+		height:715px;
+	}
+	@for $i from 1 through 4 {
+		// & > li:nth-child(#{$i}) {
+		& > .pl_#{$i} {
+			width:320px;
+			background:url(../../images/main/story_0#{$i}_off.png) center -50px no-repeat;
+			&:hover {
+				background-image:url(../../images/main/story_0#{$i}_on.png);
+			}
+		}
+	}
+}
+
+
+
+
+$section_list : ('live', 'tech', 'value', 'etc');
+@for $i from 1 through 4 {
+	.section_#{nth($section_list, $i )} {
+		background:url(../../images/main/bg_section#{$i}.jpg) bottom;
+		background-size:cover;
+	}
+}
+
+
+/* section_live */
+.post_slide {
+	margin-left:-20px;
+}
+.post_wrap {
+	height:370px;
+}
+.post {
+	position:relative;
+	box-sizing:border-box;
+	width:230px;
+	height:370px;
+	padding:10px;
+	margin-left:20px;
+
+	background:#fff;
+	border:1px solid #ccc;
+
+	&.big {
+		width:480px;
+	}
+
+	img {
+		width:100%;
+		height:175px;
+	}
+	.post_body {
+		padding:0 5px;
+
+		.post_title {
+			display:inline-block;
+			padding:10px 0;
+		}
+		.post_content {
+			display:inline-block;
+			overflow:hidden;
+			@include elip(6);
+		}
+		.post_footer {
+			position:absolute;
+			left:15px;
+			bottom:15px;
+		}
+
+	}
+}
+.post_btn {
+	padding-top:20px;
+	text-align:center;
+}
+
+
+/* section_tech */
+
+.tech_list {
+	padding-top:20px;
+	> li {
+		width:313px;
+		height:290px;
+		margin-left:20px;
+		&:first-child {
+			margin-left:0;
+		}
+	}
+	&.twoCol > li {
+		width:479px;
+	}
+}
+.tech_list {
+	a {
+		display:block;
+		&:hover {
+			.tech_pop {
+				display:block;
+			}
+			.tech_title {
+				display:none;
+			}
+		}
+	}
+	dl {
+		position:relative;
+		dt {
+			position:absolute;
+			bottom:0;
+			left:0;
+			right:0;
+			line-height:60px;
+			color:#fff;
+			text-align:center;
+		}
+		dd {
+			height:100%;
+			img {
+				width:100%;
+				height:100%;
+			}
+			.tech_pop {
+				display:none;
+				position:absolute;
+				left:0;
+				right:0;
+				top:0;
+				bottom:0;
+				padding:30px 10px;
+				color:#fff;
+				text-align:center;
+
+				em {
+					display:inline-block;
+					border-top:1px solid #fff;
+					border-bottom:1px solid #fff;
+					padding:20px 0;
+					font-size:18px;
+				}
+				strong {
+					display:block;
+					padding:20px 0;
+					font-size:28px;
+				}
+			}
+		}
+	}
+}
+
+
+
+/* section_value */
+.value_slide,
+.value_list {
+	float:left;
+}
+
+.value_slide {
+	position:relative;
+	width:500px;
+	margin-left:-20px;
+	.post_btn {
+		position:absolute;
+		bottom:10px;
+		right:10px;
+		button {
+			width:20px;
+			height:20px;
+			margin-left:6px;
+		}
+	}
+	.post_imgCol {
+		width:50%;
+		height:100%;
+
+	}
+	.post_title {
+		font-size:18px;
+	}
+	.post {
+		&:after{
+			content:'';
+			width:1px;
+			height:100%;
+		}
+	}
+	.post_body, .post_imgCol, .post:after {
+		float:none;
+		display:inline-block;
+		vertical-align:middle;
+	}
+	.post_body {
+		margin-left:-5px;
+		box-sizing:border-box;
+		width:50%;
+		padding:0 20px;
+
+		.post_content {
+			margin:20px 0;
+		}
+
+		.post_footer {
+			position:relative;
+			left:auto;
+			bottom:auto;
+		}
+	}
+
+}
+.value_list {
+	position:relative;
+	width:480px;
+	height:370px;
+	margin-left:20px;
+	&:before, &:after {
+		content:'';
+		position:absolute;
+	}
+	&:before {
+		left:50%;
+		top:0;
+		bottom:0;
+		border-left:1px solid #eee;
+		border-left:1px solid rgba(0,0,0,0.15);
+	}
+	&:after {
+		top:50%;
+		left:0;
+		right:0;
+		border-top:1px solid #eee;
+		border-top:1px solid rgba(0,0,0,0.15);
+	}
+	> li {
+		box-sizing:border-box;
+		width:50%;
+		height:50%;
+		text-align:center;
+		> a {
+			display:block;
+			box-sizing:border-box;
+			height:100%;
+			padding:20px;
+			&:hover {
+				background:rgba(0,0,0,0.1);
+			}
+		}
+	}
+	.ico {
+		display:block;
+		margin:0 auto;
+	}
+	.value_title {
+		display:inline-block;
+		color:#333;
+		font-size:18px;
+		padding:10px 0;
+		line-height:20px;
+
+		&:after {
+			content:'+';
+			display:inline-block;
+			color:#666;
+			font-weight:normal;
+		}
+	}
+	.value_concept {
+		white-space:pre-line;
+	}
+}
+
+
+/* section_etc */
+.section_etc {
+	.post_wrap > li{
+		width:245px;
+		height:330px;
+		margin:0;
+
+		.post_title {
+			font-size:16px;
+		}
+		.post_more {
+			color:#2475d0;
+		}
+	}
+
+}
+
+
+
+
+
+
+
+// 검은 반투명
+.visual_info,
+.list_rmcn,
+.list_play,
+.list_prev,
+.list_next,
+.tech_title,
+.tech_pop {
+	background: rgb(0, 0, 0);
+	background:rgba(0,0,0,0.7);
+}
+
+/* font */
+body {
+	font-family: Malgun Gothic, '맑은 고딕','MGothic', '돋움',dotum,verdana,arial,sans-serif;
+}
+.visual_wrap strong,
+.section h3 {
+	font-size:40px;
+}
+.section h3 {
+	font-weight:bold;
+}

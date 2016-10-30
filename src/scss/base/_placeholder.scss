@@ -1,0 +1,17 @@
+%clear {
+	&:after {
+		content:'';
+		display:block;
+		clear:both;
+	}
+}
+%valign {
+	&:before {
+		content:'';
+		display:inline-block;
+		width:1px;
+		height:100%;
+		margin-left:-1px;
+		vertical-align:middle;
+	}
+}

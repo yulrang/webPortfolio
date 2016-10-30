@@ -1,0 +1,52 @@
+body, div, p, h1, h2, h3, h4, h5, h6, fieldset, textarea, ul, ol, li, dl, dt, dd {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+fieldset {
+	border: 0;
+}
+
+input {
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+button {
+	cursor: pointer;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	background: none;
+}
+
+select {
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+body {
+	font-size: 12px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+em {
+	font-style: normal;
+}
+
+img {
+	vertical-align: top;
+	border: 0;
+}

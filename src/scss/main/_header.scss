@@ -1,0 +1,108 @@
+// util
+.sns_menu {
+	float:left;
+	@include util(30px, #999, 5px);
+}
+.util_menu {
+	float:right;
+	@include util(30px, #999, 10px);
+	> li > a:hover {
+		color:#fff;
+	}
+}
+
+
+// GNB 메뉴 디스플레이
+.gnb_menu,
+.gnb_submenu {
+	position:relative;
+}
+.sub, .s_sub {
+	display:none;
+}
+.gnb_menu:hover .sub,
+.gnb_menu:focus .sub,
+.gnb_submenu:hover .s_sub,
+.gnb_submenu:focus .s_sub {
+	display:block;
+}
+
+
+// GNB 메뉴 depth 1
+.gnb_menu {
+	position:relative;
+	.link_menu {
+		display:block;
+		padding:0 25px;
+		font-size:15px;
+		font-weight:bold;
+	}
+	// 대메뉴 밑의 꾸밈 bar
+	&:after {
+		content:none;
+		position:absolute;
+		left:20px;
+		right:20px;
+		bottom: 10px;
+		height:3px;
+		background:$point;
+	}
+	&:hover {
+		.link_menu {
+			color:$point;
+		}
+		&:after {
+			content:'';
+		}
+	}
+}
+
+
+// GNB 메뉴 depth 2, 3
+.sub,
+.s_sub {
+	position:absolute;
+	line-height:30px;
+	background:#fff;
+	background:rgba(255,255,255,.9);
+	border:1px solid #ccc;
+}
+.link_submenu,
+.link_s_submenu {
+	display:block;
+	padding:0 10px;
+	width:120px;
+}
+
+
+// GNB 메뉴 depth 2
+.sub {
+	top:$nav_height - 1;
+	left:0;
+	border-top-color:transparent;
+
+	.gnb_submenu {
+		//&:not(:only-child):before {
+		&[aria-haspopup='true'] .link_submenu:before {
+			content:'\f105';
+			float:right;
+			color:$point;
+			font-weight:bold;
+		}
+	}
+	.link_submenu:hover {
+		background:$point;
+		color:#fff;
+	}
+}
+
+
+// GNB 메뉴 depth 3
+.s_sub {
+	top:0;
+	left:140px;
+}
+.link_s_submenu:hover {
+	color:$point;
+	text-decoration:underline;
+}

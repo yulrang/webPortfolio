@@ -1,0 +1,104 @@
+%ico {
+	display:inline-block;
+	overflow:hidden;
+	background:url(../../images/spr.png) no-repeat;
+	-webkit-background-size:186px auto;
+	background-size:186px auto;
+	text-indent:-200px;
+	color:transparent;
+}
+
+$icons : (
+	'great' : (116px, 110px, 0, 0),
+	'news' : (115px, 67px, 0, -110px),
+	'value1' : (71px, 71px, 0, -187px),
+	'value2' : (71px, 71px, -96px, -187px),
+	'value3' : (71px, 71px, 0, -268px),
+	'value4' : (71px, 71px, -96px, -268px),
+	'blog' : (55px, 55px, 0, -349px),
+	'facebook' : (55px, 55px, -65px, -349px),
+	'twitter' : (55px, 55px, -130px, -349px),
+	'mic' : (33px, 51px, 0, -404px),
+	'cal' : (45px, 41px, 0, -465px),
+	'pen' : (33px, 47px, 0, -516px),
+	'play' : (49px, 49px, 0, -573px),
+	'family1' : (24px, 20px, 0, -622px),
+	'family2' : (24px, 20px, 0, -652px),
+	'family3' : (30px, 20px, 0, -682px),
+	'family4' : (23px, 20px, 0, -712px),
+	'family5' : (25px, 20px, 0, -742px),
+	'family6' : (24px, 20px, 0, -772px),
+	'family7' : (24px, 20px, 0, -802px)
+);
+
+$sns_icons : (
+	'sns1' : (0, -832px),
+	'sns2' : (0, -852px ),
+	'sns3' : (0, -872px),
+	'sns4' : (0, -892px),
+	'sns5' : (-48px, -832px),
+	'sns6' : (-48px, -852px),
+	'sns7' : (-48px, -872px),
+	'sns8' : (-48px, -892px),
+);
+$sns_icons_hover : (
+	'sns1_on' : (-24px, -832px),
+	'sns2_on' : (-24px, -852px),
+	'sns3_on' : (-24px, -872px,),
+	'sns4_on' : (-24px, -892px),
+	'sns5_on' : (-72px, -832px),
+	'sns6_on' : (-72px, -852px),
+	'sns7_on' : (-72px, -872px),
+	'sns8_on' : (-72px, -892px)
+);
+
+@each $key, $value in $icons {
+	.ico_#{$key} {
+		@extend %ico;
+		width:nth($value, 1);
+		height:nth($value, 2);
+		background-position:nth($value, 3) nth($value, 4);
+
+	}
+}
+
+.sns_menu > li {
+	 > a {
+		display:inline-block;
+		vertical-align:middle;
+		width: 24px;
+		height: 20px;
+		background-image:url(../../images/spr.png);
+		text-indent:-1000px;
+	}
+}
+
+$sns_list : ('blog', 'facebook', 'globalBlog', 'linkedin', 'youtube', 'rss', 'instagram', 'kakaoStory');
+@for $i from 1 through 8 {
+	.sns_menu .link_#{nth($sns_list, $i)} {
+		background-position: nth(map-get($sns_icons, sns#{$i}), 1) nth(map-get($sns_icons, sns#{$i}), 2);
+
+		&:hover {
+			background-position: nth(map-get($sns_icons_hover, sns#{$i}_on), 1) nth(map-get($sns_icons_hover, sns#{$i}_on), 2);
+		}
+	}
+
+}
+
+
+/* icon */
+.list_left,
+.list_right,
+.list_play,
+.post_btn button,
+.btn_innoTech,
+.btn_allMenu,
+.btn_search,
+.sns_menu > li > a,
+.link_submenu,
+.btn_group,
+.btn_group_sns {
+	&:before{
+		font-family: FontAwesome;
+	}
+}

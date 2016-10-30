@@ -1,0 +1,41 @@
+@mixin util($height, $color, $space) {
+	line-height:$height;
+
+	//> li:not(:first-child) {
+	> li {
+		padding-left:$space;
+		&:before {
+			content:'|';
+			display:inline-block;
+			vertical-align:top;
+			font-size:8px;
+			color:$color;
+			margin-right:$space;
+		}
+		&:first-child {
+			padding:0;
+			&:before {
+				content:none;
+			}
+		}
+		> a {
+			color:$color;
+		}
+	}
+}
+
+@mixin elip($line){
+	@if ($line == 1) {
+		display:block;
+		overflow:hidden;
+		text-overflow:ellipsis;
+		white-space:nowrap;
+	}
+	@else if ($line > 1){
+		display:-webkit-box;
+		text-overflow:ellipsis;
+		overflow:hidden;
+		-webkit-box-orient:vertical;
+		-webkit-line-clamp:$line;
+	}
+}

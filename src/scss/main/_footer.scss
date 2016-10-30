@@ -1,0 +1,28 @@
+/* footer_top */
+.footer_menu {
+	float:left;
+	@include util(45px, #ccc, 10px);
+	> li > a:hover {
+		color:#fff;
+		text-decoration:underline;
+	}
+}
+.footer_btn_wrap {
+	float:right;
+	line-height:45px;
+	button:hover {
+		text-decoration:underline;
+	}
+}
+
+/* footer_bottom */
+.service_menu {
+	@include util(20px, #000, 10px);
+	clear:both;
+	> li > a:hover {
+		text-decoration:underline;
+	}
+}
+.facebook_info {
+	padding:15px 0 10px;
+}

@@ -1,0 +1,144 @@
+%btn_popup {
+	padding:0 10px;
+	font-size:13px;
+	text-align:left;
+	color:#999;
+	font-weight:bold;
+	line-height:45px;
+
+	&:before {
+		content:'\f107';
+		float:right;
+	}
+	&.on {
+		background:$point;
+		color:#fff;
+		&:before {
+			content:'\f106'
+		}
+	}
+}
+%btn_square {
+	width:36px;
+	line-height:36px;
+	border:1px solid #ccc;
+	vertical-align:middle;
+}
+
+
+.btn_allMenu,
+.btn_search {
+	@extend %btn_square;
+	font-size:15px;
+}
+.btn_allMenu:before {
+	content:'\f0c9';
+}
+.btn_search:before {
+	content:'\f002';
+}
+
+.btn_more {
+	width:145px;
+	height:35px;
+	border:1px solid #333;
+}
+
+
+.btn_innoTech.on {
+	background:#2475C6;
+	color:#fff;
+	border:none;
+	&:before {
+		content:'\f107';
+		color:#fff;
+	}
+
+}
+
+// @for $i from 1 through 3 {
+// 	input:nth-of-type(#{$i}):checked{
+// 		~ .tab_content {
+// 			display:none;
+// 		}
+// 		~ .tab_content:nth-of-type(#{$i}){
+// 			display:block;
+// 		}
+// 	}
+// }
+.tab_content { display:none;}
+.btn_innoTech1.on ~ .tab_content1,
+.btn_innoTech2.on ~ .tab_content2,
+.btn_innoTech3.on ~ .tab_content3 { display:block;}
+
+
+.btn_innoTech {
+	box-sizing:border-box;
+	cursor:pointer;
+	position:relative;
+	display:inline-block;
+	width:150px;
+	height:30px;
+	line-height:30px;
+	background:#fff;
+	border:1px solid #aaa;
+	text-align:left;
+	text-indent:20px;
+
+	&:before{
+		content:'─';
+		float:right;
+		padding-right:20px;
+		line-height:inherit;
+		font-size:14px;
+		color:#666;
+	}
+	&:hover {
+		background:#2475C6;
+		color:#fff;
+		border:none;
+	}
+	&:hover:before {
+		content:'\f105';
+		color:#fff;
+	}
+}
+
+.tab_content:not(:first-of-type){
+	display:none;
+}
+
+
+
+
+.list_prev,
+.list_next {
+	display:inline-block;
+	width:30px;
+	height:30px;
+	color:#fff;
+	font-size:16px;
+	margin-left:16px;
+	&:first-child:before{
+		content:'\f104';
+	}
+	&:first-child+button:before{
+		content:'\f105';
+	}
+}
+
+
+
+.btn_group,
+.btn_group_sns {
+	float:left;
+	width:180px;
+	height:45px;
+	@extend %btn_popup;
+}
+.btn_group {
+	background:#262626;
+}
+.btn_group_sns {
+	background:#333;
+}
