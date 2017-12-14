@@ -21,9 +21,8 @@
 	display:none;
 }
 .gnb_menu:hover .sub,
-.gnb_menu:focus .sub,
-.gnb_submenu:hover .s_sub,
-.gnb_submenu:focus .s_sub {
+.gnb_submenu:hover .s_sub
+{
 	display:block;
 }
 
@@ -47,7 +46,8 @@
 		height:3px;
 		background:$point;
 	}
-	&:hover {
+	&:hover,
+	&:focus {
 		.link_menu {
 			color:$point;
 		}
@@ -83,11 +83,14 @@
 
 	.gnb_submenu {
 		//&:not(:only-child):before {
-		&[aria-haspopup='true'] .link_submenu:before {
+		.link_submenu:before {
 			content:'\f105';
 			float:right;
 			color:$point;
 			font-weight:bold;
+		}
+		.link_submenu.nosub:before {
+			content:'';
 		}
 	}
 	.link_submenu:hover {

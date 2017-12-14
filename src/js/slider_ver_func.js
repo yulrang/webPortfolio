@@ -5,8 +5,8 @@
 			 var list_wrap = $(this).children('ul');
 			 var list = $(list_wrap).children('li');
 			 var list_num = $(list).length;
-			 var btn_left = $(this).find('.slide_btn_left');
-			 var btn_right = $(this).find('.slide_btn_right');
+			 var btn_left = $(this).find('.slider_btn_left');
+			 var btn_right = $(this).find('.slider_btn_right');
 
 			 var $width = $(container).width();
 			 var $moveAmount = $(list).outerWidth();

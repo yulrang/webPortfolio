@@ -28,11 +28,10 @@ function clickToggle(obj) {
 }
 
 // 여러개의 버튼이 있을 때, 한 버튼이 눌리면 다른 버튼은 눌림 해제 됨
-// [!] IE8 이하에서 버튼 토글 시, 탭 이하 콘텐츠를 숨김/보임처리 하기 위해 CSS를 작성하였으나, CSS redraw가 되지 않음. (윈도우 resize를 하니 정상 작동)
-function tabToggle(obj) {
+function tabToggle(obj, tab) {
 	var button = obj;
-	$(button).siblings().removeClass('on');
-	$(button).siblings().attr('aria-selected','false');
+	$(tab).removeClass('on');
+	$(tab).attr('aria-selected','false');
 
 	$(button).addClass('on');
 	$(button).attr('aria-selected','true');

@@ -145,7 +145,6 @@
 			});
 		});
 		this.setPage('next');
-		console.log(this.page_now);
 	}
 	Slide.prototype.moveAuto = function(toggle_auto){
 		var objThis = this;

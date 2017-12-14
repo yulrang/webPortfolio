@@ -46,3 +46,8 @@ jspm_packages
 
 # Output of 'npm pack'
 *.tgz
+
+
+### grunt ###
+# Grunt usually compiles files inside this directory
+dist/
